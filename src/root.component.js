@@ -1,5 +1,5 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import Parcel from 'single-spa-react/parcel'
+import Parcel from "single-spa-react/parcel";
 export default function Root(props) {
   const linkStyle = {
     padding: "16px",
@@ -18,17 +18,8 @@ export default function Root(props) {
         Vue
       </Link>
       <Link to="/angular" style={linkStyle}>
-      <Parcel
-                    config={() => System.import('@cah/fees')}
-                    wrapWith="div"
-                />
+        <Parcel config={() => System.import("@cah/fees")} wrapWith="div" />
       </Link>
-      <Routes>
-      <Route path='/react' component={<Parcel
-                    config={() => System.import('@cah/fees')}
-                    wrapWith="div"
-                />} exact />
-                </Routes>
     </BrowserRouter>
   );
 }
